@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Zhentian Wan's page</title>
+    <link rel="stylesheet" href="./public/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="./public/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="./public/css/base.css"/>
+    <link rel="stylesheet" href="./public/css/index.css"/>
+    <link rel="stylesheet" href="./public/css/article.css"/>
+    <script src="./public/js/jquery-1.11.0.min.js"></script>
+    <script src="./public/js/angular.min.js"></script>
+    <script src="./public/js/prof.js"></script>
+    <script src="./public/js/index.js"></script>
+</head>
+<body ng-app="profApp">
+<header class="main_header">
+    <ul style="display: none;">
+        <li>My Home</li>
+        <li>Learning</li>
+    </ul>
+</header>
+<main>
+    <article class="container-fluid">
+        <header class="breakout">
+            <h1>Welcome to my HOME</h1>
+        </header>
+
+        <div class="breakout" id="self">
+            <img src="./public/imgs/2014-08-06_144809.jpg" class="img-rounded" alt="Zhentian Wan" title="Zhentian Wan"/>
+            <aside ng-controller="NavCtrl">
+                <ul>
+                    <li ng-click="goSection('contact');"><span
+                            class="glyphicon glyphicon-phone-alt "></span> Contact
+                    </li>
+                    <li ng-click="goSection('skills');"><span
+                            class="glyphicon glyphicon glyphicon-star-empty "></span> Skills
+                    </li>
+                    <li ng-click="goSection('experience');"><span
+                            class="glyphicon glyphicon-list-alt "></span> Experience
+                    </li>
+                    <li ng-click="goSection('more');"><span
+                            class="glyphicon glyphicon-info-sign img_rt_padding"></span> More
+                    </li>
+                </ul>
+            </aside>
+            <div id="cv"><img src="./public/imgs/cv.png" alt="Zhentian Wan" title="Zhentian Wan CV"><span><a
+                    style="vertical-align:middle !important;"
+                    href="./public/docs/ZhentianWan.pdf">Zhentian_Wan_CV</a></span></div>
+        </div>
+
+        <div class="breakout">
+            <blockquote>
+                <p>Your attitude, not your aptitude, will determine your
+                    altitude</p>
+            </blockquote>
+            <p>-- Zig Ziglar</p>
+        </div>
+        <section class="com_sect box_Vmodel" id="contact">
+            <h2>
+                <span class="glyphicon glyphicon-phone-alt com_sub_title"></span>Contact
+            </h2>
+
+            <div class="box_Hmodel">
+                <table>
+                    <tr>
+                        <td style="width: 10em;">Name:</td>
+                        <td>Zhentian Wan</td>
+                    </tr>
+                    <tr>
+                        <td>Email</td>
+                        <td>answer881215@gmail.com</td>
+                    </tr>
+                    <tr>
+                        <td>Phone:</td>
+                        <td>(+358)414735453</td>
+                    </tr>
+                    <tr>
+                        <td>Address:</td>
+                        <td>Nuottaniementie 18 E 38 a</td>
+                    </tr>
+                    <tr>
+                        <td>P.C:</td>
+                        <td>80140, Joensuu</td>
+                    </tr>
+                    <tr>
+                        <td>Country:</td>
+                        <td>Finland</td>
+                    </tr>
+                    <tr>
+                        <td>Home town:</td>
+                        <td>Shanghai, China</td>
+                    </tr>
+                </table>
+                <figure>
+                    <img src="./public/imgs/joensuu2014Aug.jpg" alt="Joensuu"
+                         class="img-thumbnail"/>
+                    <figcaption class="caption">Joensuu, 8.2014</figcaption>
+                </figure>
+            </div>
+        </section>
+        <section class="row com_sect" id="skills">
+            <h2>
+                <span class="glyphicon glyphicon glyphicon-star-empty com_sub_title"></span>Skills
+            </h2>
+            <main>
+                <table class="table table-condensed"
+                       ng-controller="SkilCtrl as language">
+                    <tr>
+                        <th>Programming language</th>
+                        <th>Level</th>
+                    </tr>
+                    <tr ng-repeat="lang_skill in language.lang_skills"
+                        ng-class="language.showLevel($index)">
+                        <td>{{lang_skill.name}}</td>
+                        <td>{{lang_skill.level}}</td>
+                    </tr>
+                </table>
+            </main>
+        </section>
+        <section class="row com_sect" id="experience">
+            <h2>
+                <span class="glyphicon glyphicon-list-alt com_sub_title"></span>
+                Experience
+            </h2>
+            <main>
+                <article>
+                    <header>
+                        <h4>Web developer</h4><br/>
+                        <span>University of Eastern Finland</span>
+                    </header>
+                    <span class="experience-date-locale"><time>September 2013</time> | <time>July 2014</time> (11 months)<span
+                            class="locality">, Joensuu</span></span>
+
+                    <p class="description">In charge of a location-based game website (O-MOPSI) development. O-Mopsi
+                        (cs.uef.fi/o-mopsi), which is based on the concept of classical orienteering. O-Mopsi can be
+                        played on mobile phones with GPS receiver and Internet connection. It requires players to move
+                        around in the real world. An O-Mopsi game consists of targets, which are geo-tagged photos. In
+                        order to finish the game, player must visit the set of targets in free order. The player with
+                        shortest time is the winner. Game creation, game management, game result, online player tracking
+                        and social networking functionalities can be found on the O-Mopsi web site. Games can be played
+                        at any time using O-Mopsi application, which currently exist for Symbian, Windows phone and
+                        Android platforms. The game has also been arranged as continuous workshop three time (2012, 2013
+                        and 2014) at an annual international festival (SciFest). SciFest is aimed at introducing science
+                        and technology to school children. The overall feedback received from the players has been
+                        positive. <br>
+                        <br>
+                        Using Linux, Apache, MySQL, PHP, Javascript, Underscore.js, jQuery, HTML5, CSS3.</p>
+                </article>
+                <article>
+                    <header>
+                        <h4>Web developer</h4><br/>
+                        <span>University of Eastern Finland</span>
+                    </header>
+                    <span class="experience-date-locale"><time>September 2012</time> | <time>May 2013
+                    </time> (9 months)<span class="locality">, Joensuu</span></span>
+
+                    <p class="description">Worked on two projects.<br>
+                        1. Students information sharing system for University of Eastern Finland, School of computing.
+                        Main Front-end developer and part back-end developer. (2+ months)<br>
+                        <br>
+                        2. Home take care project for University of Eastern Finland, Speech and Image processing
+                        research group. Web master. Develop both on back-end and front-end. (3+ months)<br>
+                        <br>
+                        Using Linux, Apache, MySQL, PHP, Javascript, jQuery, HTML5, CSS3, JSON.</p>
+                </article>
+                <article>
+                    <header>
+                        <h4>Junior Web Developer</h4><br/>
+                        <span>University of Eastern Finland</span>
+                    </header>
+                    <span class="experience-date-locale"><time>April 2012</time> | <time>September 2012</time> (6 months)<span
+                            class="locality">, Joensuu</span></span>
+
+                    <p class="description">Joined the Web developers group in a research group. The project MOPSI is a
+                        Location based services, people using MOPSI on mobile can take pictures, tracking friends,
+                        recording route, chatting with friends and Joensuu bus system and Facebook sharing, etc...<br>
+                        My contribution to project is on:<br>
+                        1. Parsing XML file about Joensuu bus into MySQL Database.<br>
+                        2. Facebook photo and route sharing.<br>
+                        3. Interface design.<br>
+                        <br>
+                        Using Linux, Apache, MySQL, PHP, Javascript, HTML, CSS</p>
+                </article>
+                <article>
+                    <header>
+                        <h4>Mobile Application Developer</h4><br/>
+                        <span>University of Eastern Finland</span>
+                    </header>
+                    <span class="experience-date-locale"><time>November 2011</time> | <time>February 2012</time> (4 months)<span
+                            class="locality">, Joensuu, Finland</span></span>
+
+                    <p class="description">Developed the application by using JavaME and Qt C++.<br>
+                        The application relates to locate user position, sending and receiving JSON data from
+                        server.<br>
+                        My contribution in on 'Sound navigation', 'Point and flashing targets on the map', 'Rating
+                        system'.</p>
+                </article>
+            </main>
+        </section>
+    </article>
+</main>
+<footer class="main_footer flex_box" id="more">
+    <section class="col-md-3 flex_order_1 contact_icons">
+        <div>
+            <header>Find me</header>
+            <figure>
+                <img src="./public/imgs/facebook.png" alt="facebook" title="facebook">
+            </figure>
+            <figure>
+                <img src="./public/imgs/linkedin.png" alt="linkedin" title="linkedin">
+            </figure>
+        </div>
+    </section>
+    <section class="col-md-6 flex_order_2 techs_fig box_Vmodel">
+        <div>
+            <figure>
+                <img src="./public/imgs/html5.png" alt="html5" title="html5">
+                <figcaption>HTML 5</figcaption>
+            </figure>
+            <figure>
+                <img src="./public/imgs/css3.png" alt="CSS3" title="CSS3">
+                <figcaption>CSS3</figcaption>
+            </figure>
+            <figure>
+                <img src="./public/imgs/angularjs.png" alt="Angular" title="Angular">
+                <figcaption>Angular JS</figcaption>
+            </figure>
+            <figure>
+                <img src="./public/imgs/jquery.png" alt="jQuery" title="jQuery">
+                <figcaption>jQuery</figcaption>
+            </figure>
+            <figure>
+                <img src="./public/imgs/backbone.png" alt="Backbone" title="Backbone">
+                <figcaption>Backbone.js</figcaption>
+            </figure>
+            <figure>
+                <img src="./public/imgs/bootstrap.png" alt="Bootstrap" title="Bootstrap">
+                <figcaption>Bootstrap</figcaption>
+            </figure>
+        </div>
+        <figure class="uef">
+            <a href="http://www.uef.fi/en/home" target="_blank"><img
+                    src="./public/imgs/header2.png" alt="UEF" title="UEF"/>
+                <figcaption>School of Computing</figcaption>
+            </a>
+        </figure>
+    </section>
+    <section class="col-md-3 flex_order_3 proj_links">
+        <div>
+            <header>Project links</header>
+            <ul>
+                <li><a href="http://cs.uef.fi/mopsi" target="_blank">MOPSI
+                    Project</a></li>
+                <li><a href="http://cs.uef.fi/o-mopsi" target="_blank">O-MOPSI
+                    Project</a></li>
+            </ul>
+        </div>
+    </section>
+</footer>
+</body>
+
+</html>
